@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Lecture 53</h1>
+    <p>
+        Say hello to
+        <input id="name" type="text" placeholder="Enter your name">
+        <button id="greetButton">Say It</button>
+    </p>
+    <div id="content"></div> 
+
+    <script>
+        // Step 0: Define categories and select a random one
+        var categories = ["L", "D", "S", "SP"]; // Add your actual category short names
+        var randomCategoryShortName = categories[Math.floor(Math.random() * categories.length)];
+
+        // Step 1: Set up button click event
+        document.getElementById("greetButton").addEventListener("click", function() {
+            var name = document.getElementById("name").value; // Get the name from input
+            var message = "Hello, " + name + "! Your random category is: " + randomCategoryShortName; // Create message
+            document.getElementById("content").innerText = message; // Display message in content div
+        });
+    </script>
+</body>
+</html>
